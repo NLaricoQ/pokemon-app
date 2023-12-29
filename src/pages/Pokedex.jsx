@@ -4,6 +4,7 @@ import PokemonCard from "../components/PokemonCard";
 import usePokemons from "../hooks/usePokemon";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import useUserName from "../hooks/useUserName";
+import Loader from "../components/Loader";
 
 const Pokedex = () => {
   const { pokemons } = useLoaderData();
@@ -46,14 +47,14 @@ const Pokedex = () => {
     <>
       <Header />
       <h1 className=" mx-10  mb-10 text-xl lg:text-4xl font-bold pt-5">
-        Bienvenido a esta aventura {userName}, puedes encontrar tus pokemon
-        favoritos aquí
+        Welcome to this adventure {userName}, you can find your favorite Pokemon
+        here!
       </h1>
       <div className="flex flex-col items-center gap-5 ">
         <input
           className="p-2 rounded-md w-3/4 lg:w-1/2 mt-10 border-4 border-black"
           value={search}
-          placeholder="Busca tu pokemon aqui"
+          placeholder="Search your pokemon here"
           onChange={handleSearch}
         />
         <select
@@ -75,16 +76,16 @@ const Pokedex = () => {
           className="border-2 p-2 bg-black text-white uppercase font-bold"
           onClick={previousPage}
         >
-          Anterior
+          Previous
         </button>
         <h1 className="border-2 p-2 bg-black text-white font-bold">
-          Página: {current} de {total}
+          Page: {current} of {total}
         </h1>
         <button
           className="border-2 p-2 bg-black text-white uppercase font-bold"
           onClick={nextPage}
         >
-          Siguiente
+          Next
         </button>
       </div>
       <section>
@@ -99,7 +100,7 @@ const Pokedex = () => {
             ))}
           </ul>
         ) : (
-          <p>Loading</p>
+          <Loader />
         )}
       </section>
       <div className="my-5 flex flex-row justify-center gap-5">
@@ -107,16 +108,16 @@ const Pokedex = () => {
           className="border-2 p-2 bg-black text-white uppercase font-bold"
           onClick={previousPage}
         >
-          Anterior
+          Previous
         </button>
         <h1 className="border-2 p-2 bg-black text-white font-bold">
-          Página: {current} de {total}
+          Page: {current} of {total}
         </h1>
         <button
           className="border-2 p-2 bg-black text-white uppercase font-bold"
           onClick={nextPage}
         >
-          Siguiente
+          Next
         </button>
       </div>
     </>

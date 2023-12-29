@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPokemonById } from "../services/getPokemonById";
+import Loader from "./Loader";
 
 const PokemonCard = ({ id }) => {
   const [pokemonData, setPokemonData] = useState(null);
@@ -65,6 +66,7 @@ const PokemonCard = ({ id }) => {
   return (
     <>
       <article className="flex justify-center items-center">
+        {!pokemonData && <Loader />}
         {pokemonData && (
           <div
             className={`flex flex-col content-center items-center m-5 rounded-2xl ${bgColor}`}

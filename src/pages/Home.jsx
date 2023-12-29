@@ -33,23 +33,21 @@ const Home = () => {
         }}
       >
         <div className="rounded flex flex-col  items-center  bg-transparent fixed gap-5 mx-10 bottom-16">
-          <h2 className="text-4xl text-black font-bold">
-            Bienvenido Entrenador
-          </h2>
+          <h2 className="text-4xl text-black font-bold">Welcome Trainer!</h2>
           <form onSubmit={handleClick}>
             <div className="flex flex-col items-center gap-5">
               <label
                 className="text-2xl text-black font-bold "
                 htmlFor="username"
               >
-                Escribe tu nombre y comienza tu aventura
+                Write your name and start your adventure!
               </label>
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full text-black  rounded-sm p-2"
                 id="username"
-                placeholder="Tu nommbre"
+                placeholder="Your name here"
               />
             </div>
             {alert && (
@@ -63,7 +61,7 @@ const Home = () => {
                 type="submit"
                 className="bg-white p-2 font-bold"
               >
-                Comienza!
+                Start Adventure!
               </button>
             </div>
           </form>

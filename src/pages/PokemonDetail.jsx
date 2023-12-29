@@ -143,10 +143,10 @@ const PokemonDetail = () => {
         )}
         {evolutionChain && (
           <h1 className="uppercase font-bold text-2xl text-center border-t-4 border-black mb-10 pt-10 w-full">
-            Cadena de Evolución: {evolutionChain.id}
+            Evolution chain: {evolutionChain.id}
           </h1>
         )}
-        <div className="flex flex-col w-full items-center ">
+        <div className="flex flex-col w-full items-center mb-10 ">
           {first && (
             <div className="flex flex-col h-full items-center w-full ">
               <Link
@@ -224,7 +224,7 @@ const PokemonDetail = () => {
         {varieties.length > 1 && (
           <div className="flex flex-col border-t-4 border-black pt-10 w-full items-center">
             <h1 className="uppercase font-bold text-2xl text-center">
-              Variedades
+              Varieties
             </h1>
             <div className="flex flex-col items-center w-full">
               {varieties.map((pokemon) => (
